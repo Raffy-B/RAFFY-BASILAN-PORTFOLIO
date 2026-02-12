@@ -1,0 +1,199 @@
+:root {
+  --black: #020617;
+  --gold: #d4af37;    
+  --gold-soft: #e6c75a;
+  --white: #ffffff;
+  --bg: #f8fafc;
+  --text: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  text-align: center;
+  padding: 110px 20px;
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      rgba(2, 6, 23, 0.78),
+      rgba(2, 6, 23, 0.78)
+    ),
+    url("xauusd.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-pic {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  margin-bottom: 22px;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+}
+
+h1 {
+  font-size: 34px;
+  letter-spacing: 0.5px;
+}
+
+.headline {
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--gold-soft);
+}
+
+nav {
+  background: var(--black);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav li {
+  margin: 14px 26px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 85px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 42px;
+  font-size: 22px;
+  color: var(--black);
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 14px auto 0;
+}
+
+.expertise {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 26px;
+}
+
+.expertise-card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  font-weight: 500;
+  border-top: 3px solid var(--gold);
+  transition: all 0.3s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.14);
+}
+
+.contact-box {
+  text-align: center;
+  margin-bottom: 34px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  margin: auto;
+  padding: 13px 42px;
+  background: var(--gold);
+  border: none;
+  color: var(--black);
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--gold-soft);
+}
+
+footer {
+  background: var(--gold);
+  padding: 17px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.8s ease forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
